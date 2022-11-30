@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=display.c
+SOURCEFILES_QUOTED_IF_SPACED=display.c LEDmain.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/display.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/display.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/display.o ${OBJECTDIR}/LEDmain.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/display.o.d ${OBJECTDIR}/LEDmain.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/display.o
+OBJECTFILES=${OBJECTDIR}/display.o ${OBJECTDIR}/LEDmain.o
 
 # Source Files
-SOURCEFILES=display.c
+SOURCEFILES=display.c LEDmain.c
 
 
 
@@ -100,12 +100,24 @@ ${OBJECTDIR}/display.o: display.c  .generated_files/flags/default/3478056681669e
 	@${RM} ${OBJECTDIR}/display.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/display.o.d" -MT "${OBJECTDIR}/display.o.d" -MT ${OBJECTDIR}/display.o -o ${OBJECTDIR}/display.o display.c 
 	
+${OBJECTDIR}/LEDmain.o: LEDmain.c  .generated_files/flags/default/7aae32772fc0482d1fe310ae43a16e92f58f11b6 .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LEDmain.o.d 
+	@${RM} ${OBJECTDIR}/LEDmain.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/LEDmain.o.d" -MT "${OBJECTDIR}/LEDmain.o.d" -MT ${OBJECTDIR}/LEDmain.o -o ${OBJECTDIR}/LEDmain.o LEDmain.c 
+	
 else
 ${OBJECTDIR}/display.o: display.c  .generated_files/flags/default/e5f8a916bb794123a728be0b25dab64a9b2157f7 .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/display.o.d 
 	@${RM} ${OBJECTDIR}/display.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/display.o.d" -MT "${OBJECTDIR}/display.o.d" -MT ${OBJECTDIR}/display.o -o ${OBJECTDIR}/display.o display.c 
+	
+${OBJECTDIR}/LEDmain.o: LEDmain.c  .generated_files/flags/default/9b46cceaf5fb9a08d46cbd340ddde6f92da29e2b .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LEDmain.o.d 
+	@${RM} ${OBJECTDIR}/LEDmain.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/LEDmain.o.d" -MT "${OBJECTDIR}/LEDmain.o.d" -MT ${OBJECTDIR}/LEDmain.o -o ${OBJECTDIR}/LEDmain.o LEDmain.c 
 	
 endif
 

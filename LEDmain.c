@@ -5,16 +5,9 @@
  * Created on November 28, 2022, 3:12 PM
  */
 
-#include <xc.h>
-#include <util/delay.h>
+#include "led.h"
 
-# define __DELAY_BACKWARD_COMPATIBLE__
-
-#define LED_ON PORTD |=(1<<PORTD5)
-#define LED_OFF PORTD &= ~(1<<PORTD5)
-#define LED_TOGGLE PORTD ^= (1<<PORTD5)
-
-void init(void) {
+void LED_init(void) {
     // LED as output
     DDRD |= (1<<DDD5);
     
@@ -38,8 +31,8 @@ void SetPWNOutput(int duty) {
 void wait(){
     _delay_loop_2(3200);
 }
-void main(void) {
-    init();
+void LED_main(void) {
+    LED_init();
     while(1) {
         for (int bright = 0; bright < 255; bright ++){
             SetPWNOutput(bright);
