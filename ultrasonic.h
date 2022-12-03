@@ -28,15 +28,14 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef TEMPERATUR_H
-#define	TEMPERATUR_H
+#ifndef ULTRASONIC_H
+#define	ULTRASONIC_H
 
-#include <avr/io.h>
+#include <xc.h>
 
-#define DATA PINC0
+#define TRIGGER PINB3
+#define ECHO PINB0 // input capture 
 
-void adc_init(void);
-void Temp_main(void);
 
-#endif	/* TEMPERATUR_H */
+#endif	/* ULTRASONIC_H */
 
