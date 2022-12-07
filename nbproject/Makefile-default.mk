@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=display.c LEDmain.c T_main.c
+SOURCEFILES_QUOTED_IF_SPACED=display.c led.c temperatur.c newmain.c ultrasonic.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/display.o ${OBJECTDIR}/LEDmain.o ${OBJECTDIR}/T_main.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/display.o.d ${OBJECTDIR}/LEDmain.o.d ${OBJECTDIR}/T_main.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/display.o ${OBJECTDIR}/led.o ${OBJECTDIR}/temperatur.o ${OBJECTDIR}/newmain.o ${OBJECTDIR}/ultrasonic.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/display.o.d ${OBJECTDIR}/led.o.d ${OBJECTDIR}/temperatur.o.d ${OBJECTDIR}/newmain.o.d ${OBJECTDIR}/ultrasonic.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/display.o ${OBJECTDIR}/LEDmain.o ${OBJECTDIR}/T_main.o
+OBJECTFILES=${OBJECTDIR}/display.o ${OBJECTDIR}/led.o ${OBJECTDIR}/temperatur.o ${OBJECTDIR}/newmain.o ${OBJECTDIR}/ultrasonic.o
 
 # Source Files
-SOURCEFILES=display.c LEDmain.c T_main.c
+SOURCEFILES=display.c led.c temperatur.c newmain.c ultrasonic.c
 
 
 
@@ -94,23 +94,35 @@ MP_PROCESSOR_OPTION=ATmega328P
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/display.o: display.c  .generated_files/flags/default/3478056681669e2f97086fa90fc0e27870e30f43 .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+${OBJECTDIR}/display.o: display.c  .generated_files/flags/default/c1c9f53505b22c925bdff75d5e620355539a104e .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/display.o.d 
 	@${RM} ${OBJECTDIR}/display.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/display.o.d" -MT "${OBJECTDIR}/display.o.d" -MT ${OBJECTDIR}/display.o -o ${OBJECTDIR}/display.o display.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/display.o.d" -MT "${OBJECTDIR}/display.o.d" -MT ${OBJECTDIR}/display.o -o ${OBJECTDIR}/display.o display.c 
 	
-${OBJECTDIR}/LEDmain.o: LEDmain.c  .generated_files/flags/default/7aae32772fc0482d1fe310ae43a16e92f58f11b6 .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+${OBJECTDIR}/led.o: led.c  .generated_files/flags/default/ebaa7846a5af10813fe4dc2e7bd58172608f141c .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/LEDmain.o.d 
-	@${RM} ${OBJECTDIR}/LEDmain.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/LEDmain.o.d" -MT "${OBJECTDIR}/LEDmain.o.d" -MT ${OBJECTDIR}/LEDmain.o -o ${OBJECTDIR}/LEDmain.o LEDmain.c 
+	@${RM} ${OBJECTDIR}/led.o.d 
+	@${RM} ${OBJECTDIR}/led.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/led.o.d" -MT "${OBJECTDIR}/led.o.d" -MT ${OBJECTDIR}/led.o -o ${OBJECTDIR}/led.o led.c 
 	
-${OBJECTDIR}/T_main.o: T_main.c  .generated_files/flags/default/ca0f9c3fe3b0c5cb56b8526554221e08146d107e .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+${OBJECTDIR}/temperatur.o: temperatur.c  .generated_files/flags/default/66bd53fcc372cb7515858dc4cf326de8d1c306bb .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/T_main.o.d 
-	@${RM} ${OBJECTDIR}/T_main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/T_main.o.d" -MT "${OBJECTDIR}/T_main.o.d" -MT ${OBJECTDIR}/T_main.o -o ${OBJECTDIR}/T_main.o T_main.c 
+	@${RM} ${OBJECTDIR}/temperatur.o.d 
+	@${RM} ${OBJECTDIR}/temperatur.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/temperatur.o.d" -MT "${OBJECTDIR}/temperatur.o.d" -MT ${OBJECTDIR}/temperatur.o -o ${OBJECTDIR}/temperatur.o temperatur.c 
+	
+${OBJECTDIR}/newmain.o: newmain.c  .generated_files/flags/default/ed875efdf910403c4bf558e27ffb04dfa04c650f .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/newmain.o.d 
+	@${RM} ${OBJECTDIR}/newmain.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/newmain.o.d" -MT "${OBJECTDIR}/newmain.o.d" -MT ${OBJECTDIR}/newmain.o -o ${OBJECTDIR}/newmain.o newmain.c 
+	
+${OBJECTDIR}/ultrasonic.o: ultrasonic.c  .generated_files/flags/default/cfb48d088fe3467f20248d5591f5f9e57f50296f .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ultrasonic.o.d 
+	@${RM} ${OBJECTDIR}/ultrasonic.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/ultrasonic.o.d" -MT "${OBJECTDIR}/ultrasonic.o.d" -MT ${OBJECTDIR}/ultrasonic.o -o ${OBJECTDIR}/ultrasonic.o ultrasonic.c 
 	
 else
 ${OBJECTDIR}/display.o: display.c  .generated_files/flags/default/e5f8a916bb794123a728be0b25dab64a9b2157f7 .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
@@ -119,17 +131,29 @@ ${OBJECTDIR}/display.o: display.c  .generated_files/flags/default/e5f8a916bb7941
 	@${RM} ${OBJECTDIR}/display.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/display.o.d" -MT "${OBJECTDIR}/display.o.d" -MT ${OBJECTDIR}/display.o -o ${OBJECTDIR}/display.o display.c 
 	
-${OBJECTDIR}/LEDmain.o: LEDmain.c  .generated_files/flags/default/9b46cceaf5fb9a08d46cbd340ddde6f92da29e2b .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+${OBJECTDIR}/led.o: led.c  .generated_files/flags/default/73d96e7633af73594f68672d403b569bdfc9322c .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/LEDmain.o.d 
-	@${RM} ${OBJECTDIR}/LEDmain.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/LEDmain.o.d" -MT "${OBJECTDIR}/LEDmain.o.d" -MT ${OBJECTDIR}/LEDmain.o -o ${OBJECTDIR}/LEDmain.o LEDmain.c 
+	@${RM} ${OBJECTDIR}/led.o.d 
+	@${RM} ${OBJECTDIR}/led.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/led.o.d" -MT "${OBJECTDIR}/led.o.d" -MT ${OBJECTDIR}/led.o -o ${OBJECTDIR}/led.o led.c 
 	
-${OBJECTDIR}/T_main.o: T_main.c  .generated_files/flags/default/f305a79b0ef31b41cfa62ed09c6e610e68969980 .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+${OBJECTDIR}/temperatur.o: temperatur.c  .generated_files/flags/default/5461ba8eeb799e77ff1108c24efd3c847f17ae6f .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/T_main.o.d 
-	@${RM} ${OBJECTDIR}/T_main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/T_main.o.d" -MT "${OBJECTDIR}/T_main.o.d" -MT ${OBJECTDIR}/T_main.o -o ${OBJECTDIR}/T_main.o T_main.c 
+	@${RM} ${OBJECTDIR}/temperatur.o.d 
+	@${RM} ${OBJECTDIR}/temperatur.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/temperatur.o.d" -MT "${OBJECTDIR}/temperatur.o.d" -MT ${OBJECTDIR}/temperatur.o -o ${OBJECTDIR}/temperatur.o temperatur.c 
+	
+${OBJECTDIR}/newmain.o: newmain.c  .generated_files/flags/default/8c68298f079ec24b1eebc4579cb8269b1e76928 .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/newmain.o.d 
+	@${RM} ${OBJECTDIR}/newmain.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/newmain.o.d" -MT "${OBJECTDIR}/newmain.o.d" -MT ${OBJECTDIR}/newmain.o -o ${OBJECTDIR}/newmain.o newmain.c 
+	
+${OBJECTDIR}/ultrasonic.o: ultrasonic.c  .generated_files/flags/default/906f1f5c85739f214ed322dade75218cedd84258 .generated_files/flags/default/2ebadb7499da65fc4c278afdfab593bf9d1d26cd
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ultrasonic.o.d 
+	@${RM} ${OBJECTDIR}/ultrasonic.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/ultrasonic.o.d" -MT "${OBJECTDIR}/ultrasonic.o.d" -MT ${OBJECTDIR}/ultrasonic.o -o ${OBJECTDIR}/ultrasonic.o ultrasonic.c 
 	
 endif
 
@@ -150,7 +174,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 ${DISTDIR}/Liquid_Level_Monitoring.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/Liquid_Level_Monitoring.X.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2 -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -gdwarf-3     $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/Liquid_Level_Monitoring.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  -o ${DISTDIR}/Liquid_Level_Monitoring.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -Wl,--start-group  -Wl,-lm -Wl,--end-group  -Wl,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/Liquid_Level_Monitoring.X.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"   -gdwarf-2 -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -gdwarf-3     $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/Liquid_Level_Monitoring.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  -o ${DISTDIR}/Liquid_Level_Monitoring.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -Wl,--start-group  -Wl,-lm -Wl,--end-group  -Wl,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1
 	@${RM} ${DISTDIR}/Liquid_Level_Monitoring.X.${IMAGE_TYPE}.hex 
 	
 else

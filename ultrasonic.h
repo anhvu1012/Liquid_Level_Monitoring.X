@@ -32,10 +32,14 @@
 #define	ULTRASONIC_H
 
 #include <xc.h>
+#include <util/delay.h>
+#include <avr/interrupt.h>
 
 #define TRIGGER PINB3
 #define ECHO PINB0 // input capture 
 
+void ultrasonic_init(void);
+void ultrasonic_main(void);
 
 #endif	/* ULTRASONIC_H */
 
