@@ -4,8 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/annzi/Documents/WiSe22-23/Elektronik/MPLABXProjects/Liquid_Level_Monitoring.X/temperatur.h</file>
-            <file>file:/C:/Users/annzi/Documents/WiSe22-23/Elektronik/MPLABXProjects/Liquid_Level_Monitoring.X/newmain.c</file>
+            <file>file:/C:/Users/annzi/Documents/WiSe22-23/Elektronik/MPLABXProjects/Liquid_Level_Monitoring.X/ultrasonic.c</file>
             <file>file:/C:/Users/annzi/Documents/WiSe22-23/Elektronik/MPLABXProjects/Liquid_Level_Monitoring.X/temperatur.c</file>
+            <file>file:/C:/Users/annzi/Documents/WiSe22-23/Elektronik/MPLABXProjects/Liquid_Level_Monitoring.X/led.c</file>
+            <file>file:/C:/Users/annzi/Documents/WiSe22-23/Elektronik/MPLABXProjects/Liquid_Level_Monitoring.X/ultrasonic.h</file>
+            <file>file:/C:/Users/annzi/Documents/WiSe22-23/Elektronik/MPLABXProjects/Liquid_Level_Monitoring.X/display.h</file>
+            <file>file:/C:/Users/annzi/Documents/WiSe22-23/Elektronik/MPLABXProjects/Liquid_Level_Monitoring.X/led.h</file>
+            <file>file:/C:/Users/annzi/Documents/WiSe22-23/Elektronik/MPLABXProjects/Liquid_Level_Monitoring.X/mainProg.c</file>
         </group>
     </open-files>
 </project-private>

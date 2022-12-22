@@ -4,8 +4,12 @@
  *
  * Created on November 28, 2022, 3:12 PM
  */
+#define F_CPU 16000000UL
 
+#define __DELAY_BACKWARD_COMPATIBLE__
 #include "led.h"
+#include <util/delay.h>
+#include "ultrasonic.h"
 
 void LED_init(void) {
     // LED as output

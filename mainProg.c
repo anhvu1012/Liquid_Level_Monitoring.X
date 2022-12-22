@@ -5,9 +5,12 @@
  * Created on 7. Dezember 2022, 09:12
  */
 
-
+#define F_CPU 16000000UL
 #include <avr/io.h>
 #include "display.h"
+#include "ultrasonic.h"
+
+// Variables for distance, temperatur
 
 void main(void) {
     SPI_init();
@@ -42,25 +45,26 @@ void main(void) {
     
     //comand sequence for the box 1
     SendCommandSeq(window1, 6);
-
     for(uint16_t i = 0; i < 93*136; i++){
     SPISend16Bit(0xFFFF); //send white
     }
+    
     //comand sequence for the box 2
     SendCommandSeq(window2, 6);
-
     for(uint16_t i = 0; i < 83*126; i++){
     SPISend16Bit(0x0000); //send black
     }
-    //comand sequence for the liquid box
+    
+    //comand sequence for the liquid box Inhalt
     SendCommandSeq(liquid, 6);
-
     for(uint16_t i = 0; i < 73*116; i++){
     SPISend16Bit(0xF800); //send red
-    }
     //SPISend16Bit(0x001F); //send blue
     //SPISend16Bit(0xFFE0); //send yellow
-   
+    }
+    
+    
+    //ultrasonic_main();
     while(1){;}
-    return;
+    
 }

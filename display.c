@@ -5,7 +5,9 @@
  * Created on 27. November 2022, 16:26
  */
 
-
+#define F_CPU 16000000UL
+#include <util/delay.h>
+#include <avr/io.h>
 #include "display.h"
 
 

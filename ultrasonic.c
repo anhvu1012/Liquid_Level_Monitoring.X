@@ -5,7 +5,7 @@
  * Created on 7. Dezember 2022, 16:59
  */
 
-
+#include <stdio.h>
 #include "ultrasonic.h"
 
 // max volume fehlt => für später max volume - distance = wasserstand
@@ -13,13 +13,13 @@ int timerOverflow = 0;
 long countZeit;
 double distance;
 
-ISR(TIMER_OVF_vect){
-    timerOverflow++; // for what??
+ISR(TIMER1_OVF_vect){
+    timerOverflow++; // timer reach 255 
 }
 
 void ultrasonic_init(void){
     // trigger pin as output
-    DDRB |= (1<<DDB3);
+    DDRB |= (1<<DDB1);
     // pull up for echo(input) enable
     PORTB |= (1<<PORTB0);
     
@@ -29,14 +29,14 @@ void ultrasonic_init(void){
     
 }
 
-void ultrasonic_main(void) {
+double ultrasonic_main(void) {
     ultrasonic_init();
     
     while(1){
         // 10µs trigger pulse sent to ultrasonic
-        PORTB |= (1<<PORTB3);
-        _delay_us(10);
-        PORTB &= ~(1<<PORTB3);
+        PORTB |= (1<<PORTB1);
+        _delay_us(10); //timer0 normal mode
+        PORTB &= ~(1<<PORTB1);
         
         // Input capture
         TCNT1 = 0;          // clear timer counter
@@ -56,5 +56,7 @@ void ultrasonic_main(void) {
         countZeit = ICR1 + (65535 * timerOverflow); // Take count
         // 16MHz Timer frequenz, sound velocity = 343m/s
         distance = (double) countZeit / 941.12;
+        return distance;
+        //printf("Distance: %1f", distance);
     }
 }

@@ -46,10 +46,9 @@ double getTemperatur(){
     return temp;
 }
 
-void Temp_main(void) {
+double Temp_main(void) {
     adc_init();
-    double temperatur;
     while(1){
-        temperatur = getTemperatur();
+        return getTemperatur();
     }  
 }

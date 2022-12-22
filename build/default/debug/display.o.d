@@ -1,5 +1,4 @@
 build/default/debug/display.o.d build/default/debug/display.o: display.c \
- display.h \
  c:\program\ files\microchip\xc8\v2.40\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.40\avr\avr\include\inttypes.h \
  c:\program\ files\microchip\xc8\v2.40\avr\avr\include\features.h \
@@ -15,9 +14,8 @@ build/default/debug/display.o.d build/default/debug/display.o: display.c \
  c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\portpins.h \
  c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\common.h \
  c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\fuse.h \
- c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\lock.h
-
-display.h:
+ c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\lock.h \
+ display.h
 
 c:\program\ files\microchip\xc8\v2.40\avr\avr\include\util\delay.h:
 
@@ -50,3 +48,5 @@ c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\common.h:
 c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\lock.h:
+
+display.h:

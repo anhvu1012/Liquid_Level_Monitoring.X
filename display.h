@@ -31,13 +31,6 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
-#ifndef F_CPU
-#define F_CPU 16000000UL
-#endif
-
-#include <util/delay.h>
-#include <avr/io.h>
-
 // Pins and Macros
 #define SPI_DDR DDRB
 #define CS      PINB2

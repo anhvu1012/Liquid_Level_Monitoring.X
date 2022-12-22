@@ -31,15 +31,18 @@
 #ifndef ULTRASONIC_H
 #define	ULTRASONIC_H
 
+#define F_CPU 16000000UL
+
 #include <xc.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-#define TRIGGER PINB3
+//#define MAX_LEVEL (Kapazität vom Behälter)
+#define TRIGGER PINB1
 #define ECHO PINB0 // input capture 
 
 void ultrasonic_init(void);
-void ultrasonic_main(void);
+double ultrasonic_main(void);
 
 #endif	/* ULTRASONIC_H */
 

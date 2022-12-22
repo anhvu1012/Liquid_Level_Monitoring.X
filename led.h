@@ -32,9 +32,6 @@
 #define	LED_H
 
 #include <xc.h>
-#include <util/delay.h>
-
-# define __DELAY_BACKWARD_COMPATIBLE__
 
 #define LED_ON PORTD |=(1<<PORTD5)
 #define LED_OFF PORTD &= ~(1<<PORTD5)

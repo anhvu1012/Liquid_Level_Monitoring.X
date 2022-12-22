@@ -19,8 +19,8 @@
       <itemPath>display.c</itemPath>
       <itemPath>led.c</itemPath>
       <itemPath>temperatur.c</itemPath>
-      <itemPath>newmain.c</itemPath>
       <itemPath>ultrasonic.c</itemPath>
+      <itemPath>mainProg.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -676,6 +676,8 @@
         <property key="periphComp5.gte" value="gt"/>
         <property key="periphComp6.gte" value="gt"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/annzi/Documents/WiSe22-23/Elektronik/MPLABXProjects/Liquid_Level_Monitoring.X/debug/default/Liquid_Level_Monitoring_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges" value="0-3ff"/>
