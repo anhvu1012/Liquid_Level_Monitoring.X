@@ -35,11 +35,9 @@
 
 #define LED_ON PORTD |=(1<<PORTD5)
 #define LED_OFF PORTD &= ~(1<<PORTD5)
-#define LED_TOGGLE PORTD ^= (1<<PORTD5)
 
 void LED_init(void);
-void SetPWNOutput(int);
+void SetPWMOutput(int);
 void wait(void);
-void LED_main(void);
 
 #endif	/* LED_H */

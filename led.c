@@ -9,11 +9,11 @@
 #define __DELAY_BACKWARD_COMPATIBLE__
 #include "led.h"
 #include <util/delay.h>
-#include "ultrasonic.h"
 
 void LED_init(void) {
     // LED as output
     DDRD |= (1<<DDD5);
+    LED_OFF;
     
     // PWM Timer
         // Set PWM mode
@@ -28,13 +28,15 @@ void LED_init(void) {
     TCCR0A &= ~(1<<COM0B0);
 }
 
-void SetPWNOutput(int duty) {
+void SetPWMOutput(int duty) {
     OCR0B = duty;
 }
 
 void wait(){
-    _delay_loop_2(3200);
+    _delay_us(2000);
 }
+/* in mainProg
+ 
 void LED_main(void) {
     LED_init();
     while(1) {
@@ -48,4 +50,4 @@ void LED_main(void) {
             wait();
         }
     }
-}
+} */

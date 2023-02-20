@@ -13,11 +13,23 @@ void adc_init(void){
     DDRC &= ~(1<<DDC0);
     
     //Configure ADC, 8 Bit Genauigkeit => nur ADCH Register lesen
+    
+    //without interrupt
     ADMUX = 0x60; // left adjust, A0 is input, internal Vref 5V
     ADCSRA = 0x87; // enable ADC, Prescaler 128, no interrupt, no auto trigger 
     ADCSRB = 0;
+    
+    
+    /*
+    ADMUX = 0x60; // left adjust, A0 is input, internal Vref 5V
+    ADCSRA = 0xcf; // enable ADC, start conversion, Prescaler 128, interrupt, no auto trigger 
+    ADCSRB = 0;
+    
+    sei(); 
+    */
 }
 
+//without interrupt
 int adc_value(){
     //Start ADC
     ADCSRA |= (1<<ADSC); // start converting
@@ -29,10 +41,18 @@ int adc_value(){
     return(ADCH);      // return conversion result 
 }
 
+/*
+// occur when conversion ends
+ISR(ADC_vect) {
+    value = ADCH;
+}
+
 double getTemperatur(){
-    value = adc_value();   
+    value = adc_value();   no interrupt
+    
+    
     // Widerstand berechnen, U = 5V, 8 Bit ADC => 256 
-    // Formel: Rptc = Rv * AD / (256 ) 
+    // Formel: Rptc = Rv * AD / (256 - AD) 
     res = 100 * value / (256 - value);
     
     // Temperatur berechnen
@@ -46,9 +66,4 @@ double getTemperatur(){
     return temp;
 }
 
-double Temp_main(void) {
-    adc_init();
-    while(1){
-        return getTemperatur();
-    }  
-}
+*/

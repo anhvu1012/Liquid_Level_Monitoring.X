@@ -39,21 +39,11 @@
 #define D_C     PIND2        //display: Data/Command
 #define Reset   PIND3        //display: Reset
 
+extern const uint16_t window1[];
+extern const uint16_t window2[];
+extern const uint16_t liquid[];
 
 void SPI_init(void);
-/*
-    <p><b>void SPI_init(void):</b></p>
-
-    <p><b>Summary: Setup of SPI-Display connection</b></p>
-
-    <p><b>Description: set CS, MOSI and SCK to output. enable SPI, set as master, and clock to fosc/4 </b></p>
-
-    <p><b>Precondition: Physical connection to Display via Shield.</b></p>
-
-    <p><b>Parameters: None</b></p>
-
-    <p><b>Returns: None</b></p>
- */
 
 void SPISend16Bit(uint16_t);
 void SPISend8Bit(uint8_t);

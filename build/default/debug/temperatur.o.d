@@ -12,7 +12,8 @@ build/default/debug/temperatur.o.d build/default/debug/temperatur.o: \
  c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\portpins.h \
  c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\common.h \
  c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\fuse.h \
- c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\lock.h
+ c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\lock.h \
+ c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\interrupt.h
 
 temperatur.h:
 
@@ -41,3 +42,5 @@ c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\common.h:
 c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\lock.h:
+
+c:\program\ files\microchip\xc8\v2.40\avr\avr\include\avr\interrupt.h:

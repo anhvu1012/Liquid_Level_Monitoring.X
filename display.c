@@ -10,6 +10,28 @@
 #include <avr/io.h>
 #include "display.h"
 
+const uint16_t window1[] ={
+    0xEF08, 0x1803, //Portrait modus 180 gedreht
+    0x1270, //x1
+    0x139C, //y1
+    0x1514, //x2
+    0x1614  //y2
+};
+
+const uint16_t window2[] ={
+    0xEF08, 0x1803, //Portrait modus 180 gedreht
+    0x126B, //x1
+    0x1397, //y1
+    0x1519, //x2
+    0x1619  //y2
+};  
+const uint16_t liquid[] ={
+    0xEF08, 0x1803, //Portrait modus 180 gedreht
+    0x1266, //x1
+    0x1392, //y1
+    0x151E, //x2
+    0x161E  //y2
+};
 
 void SPI_init(){
 	//set CS, MOSI and SCK to output:

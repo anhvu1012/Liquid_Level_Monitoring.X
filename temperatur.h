@@ -32,17 +32,18 @@
 #define	TEMPERATUR_H
 
 #include <avr/io.h>
+#include <avr/interrupt.h>
 
 #define DATA PINC0 // A0 port
 
-int value;
-long res;
-double temp;
+extern uint16_t value;
+extern uint16_t res;
+extern uint16_t temp;
+extern uint16_t temp_c;
 
 void adc_init(void);
-int adc();
-double getTemperatur();
-void Temp_main(void);
+int adc_value(); 
+//double getTemperatur();
 
 #endif	/* TEMPERATUR_H */
 
