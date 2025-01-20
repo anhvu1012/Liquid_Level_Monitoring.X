@@ -1,6 +1,4 @@
-### A Project in HAW Hamburg
-<hr>
-
+# A Project in HAW Hamburg
 This project is about water level monitoring and involves the use of:
 
 
